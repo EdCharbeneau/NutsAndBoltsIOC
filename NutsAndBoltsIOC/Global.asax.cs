@@ -12,6 +12,12 @@ namespace NutsAndBoltsIOC
     {
         protected void Application_Start()
         {
+            /*
+             * DependencyResolverConfig is a custom class added to handle dependency registration for the application
+             * DependencyResolverConfig is executed first in case the container is used within another configuration
+            */
+            DependencyResolverConfig.RegisterDependencies();
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
