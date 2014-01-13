@@ -173,8 +173,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bar.cs" />
+    <Compile Include="Models\Baz.cs" />
+    <Compile Include="Models\Foo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ApplicationService.cs" />
+    <Compile Include="Repository\ConcreteContext.cs" />
+    <Compile Include="Repository\DemoRepository.cs" />
+    <Compile Include="Repository\IApplicationService.cs" />
+    <Compile Include="Repository\IContext.cs" />
+    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

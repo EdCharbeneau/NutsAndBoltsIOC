@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NutsAndBoltsIOC.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,18 @@ namespace NutsAndBoltsIOC.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IApplicationService _service;
+
+        public HomeController(IApplicationService service)
+        {
+            _service = service;
+        }
+
         public ActionResult Index()
         {
+            ViewBag.Foo = _service.DisplayFoo();
+            ViewBag.Bar = _service.DisplayBar();
+            ViewBag.Baz = _service.DisplayBaz();
             return View();
         }
 
