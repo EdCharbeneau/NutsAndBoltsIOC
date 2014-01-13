@@ -2,6 +2,13 @@
 
 namespace NutsAndBoltsIOC.Repository
 {
+    /* IRepository will be injected for each POCO
+     * ]
+     * Responsiblity: to be a service exposed directly to the application. Handles detailed operations before passing CRUD commands back to the repository > context.
+     * This is where very specific methods that return filtered data would go.
+     * 
+     */
+
     public class ApplicationService : IApplicationService
     {
         private readonly IRepository<Foo> _fooRepository;

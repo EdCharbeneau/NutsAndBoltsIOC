@@ -16,9 +16,11 @@ namespace NutsAndBoltsIOC
             builder.RegisterControllers(typeof(MvcApplication).Assembly); // RegisterControllers requires Autofac.Integratiion.MVC
 
             // Register application components here
-            builder.RegisterType<ConcreteContext>().As<IContext>();
+            
+            // InstancePerHttpRequest let's autofac handle when an object is disposed. Useful for disposing connections, and database contexts
+            builder.RegisterType<ConcreteContext>().As<IContext>().InstancePerHttpRequest(); 
             builder.RegisterGeneric(typeof(DemoRepository<>)).As(typeof(IRepository<>));
-            builder.RegisterType<ApplicationService>().As<IApplicationService>();
+            builder.RegisterType<ApplicationService>().As<IApplicationService>().InstancePerHttpRequest();
 
             // Build container
             var container = builder.Build();

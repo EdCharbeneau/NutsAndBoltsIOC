@@ -11,6 +11,9 @@ namespace NutsAndBoltsIOC.Repository
      * Ex: Database
      * In a real world apllication, this would be an implementation of DbContext
      * IContext would represent an inteface to the implementation of DbContext
+     * 
+     * Responsibility: to communicate directly with the data.
+     * 
      */
     public class ConcreteContext : IContext
     {
